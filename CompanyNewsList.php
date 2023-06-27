@@ -2,18 +2,10 @@
 	include 'head2.php';
 	include './module/loading2.php';
 
-	if(!$newsSymbol)	$newsSymbol = 'AAPL';
-	$newEdate = date('Y-m-d');
-	$newSdate = date('Y-m-d', strtotime('-10 day', strtotime($newEdate)));
 
-    $finnhub = "https://finnhub.io/api/v1/company-news";
-    $param = "?symbol=".$newsSymbol."&from=".$newSdate."&to=".$newEdate;
 
     //API 호출
-    include './module/apiCall.php';
 
-    $itemTmp = json_decode($req,JSON_UNESCAPED_UNICODE);
-	$totCnt = count($itemTmp);
 ?>
 					<!--
 						<div class="search_box clearfix">
